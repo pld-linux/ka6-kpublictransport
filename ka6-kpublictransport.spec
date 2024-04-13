@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.02.1
+%define		kdeappsver	24.02.2
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kpublictransport
 Summary:	A library for accessing realtime public transport data
 Name:		ka6-%{kaname}
-Version:	24.02.1
+Version:	24.02.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	a382989e33e1c4367f96f274d79c621a
+# Source0-md5:	028b29db7a1f40979b327aec7de90095
 URL:		https://community.kde.org/KDE_PIM/KDE_Itinerary
 BuildRequires:	Qt6Core-devel >= 5.15.2
 BuildRequires:	Qt6Gui-devel >= 5.15.2
