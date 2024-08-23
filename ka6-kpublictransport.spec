@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.05.2
+%define		kdeappsver	24.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kpublictransport
 Summary:	A library for accessing realtime public transport data
 Name:		ka6-%{kaname}
-Version:	24.05.2
+Version:	24.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	22dfe0b76f3b86e9a247e9b40c3e278b
+# Source0-md5:	79c8e43783bb8149d8a8eec8bf0ad81a
 URL:		https://community.kde.org/KDE_PIM/KDE_Itinerary
 BuildRequires:	Qt6Core-devel >= 5.15.2
 BuildRequires:	Qt6Gui-devel >= 5.15.2
@@ -111,6 +111,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/kpublictransport/ui/qmldir
 %{_datadir}/qlogging-categories6/org_kde_kpublictransport.categories
 %{_datadir}/qlogging-categories6/org_kde_kpublictransport_onboard.categories
+%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/FeatureIcon.qml
+%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/OccupancyIndicator.qml
 
 %files devel
 %defattr(644,root,root,755)
