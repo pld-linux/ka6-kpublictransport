@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.12.3
+%define		kdeappsver	25.04.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kpublictransport
 Summary:	A library for accessing realtime public transport data
 Name:		ka6-%{kaname}
-Version:	24.12.3
+Version:	25.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	00414ab50e1fea7d360fda94b25e14f0
+# Source0-md5:	5b2cdef615d1a5cc372675a529e40013
 URL:		https://community.kde.org/KDE_PIM/KDE_Itinerary
 BuildRequires:	Qt6Core-devel >= 5.15.2
 BuildRequires:	Qt6Gui-devel >= 5.15.2
@@ -80,13 +80,15 @@ ctest --test-dir build
 rm -rf $RPM_BUILD_ROOT
 %ninja_install -C build
 
+%find_lang %{kaname}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%files
+%files -f %{kaname}.lang
 %defattr(644,root,root,755)
 %doc README.md
 %ghost %{_libdir}/libKPublicTransport.so.1
@@ -113,6 +115,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/qlogging-categories6/org_kde_kpublictransport_onboard.categories
 %{_libdir}/qt6/qml/org/kde/kpublictransport/ui/FeatureIcon.qml
 %{_libdir}/qt6/qml/org/kde/kpublictransport/ui/OccupancyIndicator.qml
+%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/JourneyHorizontalBar.qml
+%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/TransportIcon.qml
+%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/TransportNameControl.qml
 
 %files devel
 %defattr(644,root,root,755)
