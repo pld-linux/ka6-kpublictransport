@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.04.3
+%define		kdeappsver	25.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kpublictransport
 Summary:	A library for accessing realtime public transport data
 Name:		ka6-%{kaname}
-Version:	25.04.3
+Version:	25.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	d6d9a4385ebaadd9627e44bf32558bfd
+# Source0-md5:	b52690c92486127fb17db4618122d73e
 URL:		https://community.kde.org/KDE_PIM/KDE_Itinerary
 BuildRequires:	Qt6Core-devel >= 5.15.2
 BuildRequires:	Qt6Gui-devel >= 5.15.2
@@ -118,6 +118,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/kpublictransport/ui/JourneyHorizontalBar.qml
 %{_libdir}/qt6/qml/org/kde/kpublictransport/ui/TransportIcon.qml
 %{_libdir}/qt6/qml/org/kde/kpublictransport/ui/TransportNameControl.qml
+%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/BackendPage.qml
+%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/ExpectedTimeLabel.qml
+%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/FeatureDelegate.qml
+%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/OccupancyDelegate.qml
+%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/StopPickerPage.qml
+%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/StopoverInformationView.qml
+%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/VehicleLayoutView.qml
+%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/VehicleSectionDelegate.qml
+%dir %{_libdir}/qt6/qml/org/kde/kpublictransport/ui/private
+%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/private/CountryComboBox.qml
 
 %files devel
 %defattr(644,root,root,755)
