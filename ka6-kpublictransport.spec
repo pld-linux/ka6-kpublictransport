@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.3
+%define		kdeappsver	25.12.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kpublictransport
 Summary:	A library for accessing realtime public transport data
 Name:		ka6-%{kaname}
-Version:	25.08.3
-Release:	2
+Version:	25.12.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	2c29a4a5c1ebf3604310b3f47cb63a3a
+# Source0-md5:	c0cb98687cdf2f9b2690a48a1ec12955
 URL:		https://community.kde.org/KDE_PIM/KDE_Itinerary
 BuildRequires:	Qt6Core-devel >= 5.15.2
 BuildRequires:	Qt6Gui-devel >= 5.15.2
@@ -96,39 +96,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libKPublicTransport.so.*.*
 %ghost %{_libdir}/libKPublicTransportOnboard.so.1
 %{_libdir}/libKPublicTransportOnboard.so.*.*
-%dir %{_libdir}/qt6/qml/org/kde/kpublictransport
-%{_libdir}/qt6/qml/org/kde/kpublictransport/kde-qmlmodule.version
-%{_libdir}/qt6/qml/org/kde/kpublictransport/kpublictransportqmlplugin.qmltypes
-%{_libdir}/qt6/qml/org/kde/kpublictransport/libkpublictransportqmlplugin.so
-%dir %{_libdir}/qt6/qml/org/kde/kpublictransport/onboard
-%{_libdir}/qt6/qml/org/kde/kpublictransport/onboard/kde-qmlmodule.version
-%{_libdir}/qt6/qml/org/kde/kpublictransport/onboard/kpublictransportonboardqmlplugin.qmltypes
-%{_libdir}/qt6/qml/org/kde/kpublictransport/onboard/libkpublictransportonboardqmlplugin.so
-%{_libdir}/qt6/qml/org/kde/kpublictransport/onboard/qmldir
-%{_libdir}/qt6/qml/org/kde/kpublictransport/qmldir
-%dir %{_libdir}/qt6/qml/org/kde/kpublictransport/ui
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/VehicleSectionItem.qml
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/kde-qmlmodule.version
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/kpublictransportquickplugin.qmltypes
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/libkpublictransportquickplugin.so
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/qmldir
+%{_libdir}/qt6/qml/org/kde/kpublictransport
 %{_datadir}/qlogging-categories6/org_kde_kpublictransport.categories
 %{_datadir}/qlogging-categories6/org_kde_kpublictransport_onboard.categories
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/FeatureIcon.qml
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/OccupancyIndicator.qml
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/JourneyHorizontalBar.qml
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/TransportIcon.qml
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/TransportNameControl.qml
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/BackendPage.qml
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/ExpectedTimeLabel.qml
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/FeatureDelegate.qml
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/OccupancyDelegate.qml
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/StopPickerPage.qml
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/StopoverInformationView.qml
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/VehicleLayoutView.qml
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/VehicleSectionDelegate.qml
-%dir %{_libdir}/qt6/qml/org/kde/kpublictransport/ui/private
-%{_libdir}/qt6/qml/org/kde/kpublictransport/ui/private/CountryComboBox.qml
 
 %files devel
 %defattr(644,root,root,755)
