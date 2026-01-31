@@ -3,22 +3,23 @@
 %bcond_with	tests		# build with tests
 %define		kdeappsver	25.12.1
 %define		kframever	5.94.0
-%define		qtver		5.15.2
+%define		qtver		6.6.0
 %define		kaname		kpublictransport
 Summary:	A library for accessing realtime public transport data
 Name:		ka6-%{kaname}
 Version:	25.12.1
-Release:	2
+Release:	3
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
 # Source0-md5:	cf111c17cb32842207e8dfa531242199
 URL:		https://community.kde.org/KDE_PIM/KDE_Itinerary
-BuildRequires:	Qt6Core-devel >= 5.15.2
-BuildRequires:	Qt6Gui-devel >= 5.15.2
-BuildRequires:	Qt6Network-devel >= 5.15.2
-BuildRequires:	Qt6Qml-devel >= 5.15.2
-BuildRequires:	Qt6Quick-devel
+BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	Qt6Gui-devel >= %{qtver}
+BuildRequires:	Qt6Location-devel >= %{qtver}
+BuildRequires:	Qt6Network-devel >= %{qtver}
+BuildRequires:	Qt6Qml-devel >= %{qtver}
+BuildRequires:	Qt6Quick-devel >= %{qtver}
 BuildRequires:	kf6-extra-cmake-modules >= 5.91
 BuildRequires:	ninja
 BuildRequires:	polyclipping-devel
