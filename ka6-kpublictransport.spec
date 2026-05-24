@@ -48,6 +48,19 @@ This includes:
 - Realtime information about the operational status of elevators or
   escalators.
 
+%description -l pl.UTF-8
+Biblioteka do odczytywania w czasie rzeczywistym danych o publicznym
+transporcie i wykonywania zapytań dotyczących podróży transportem
+publicznym.
+
+W tym:
+- Znajdowanie przystanków autobusowych i stacji kolejowych,
+  odjazdów/przyjazdów z nich i czasu podróży między nimi.
+- Informacja o sieci połączeń.
+- Informacja o wagonach i rozmieszczeniu peronów.
+- Informacja o wpożyczaniu rowerów i skuterów.
+- Informacje w czasie rzeczywistym o statusie wind i ruchomych schodów.
+
 %package devel
 Summary:	Header files for %{kaname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kaname}
