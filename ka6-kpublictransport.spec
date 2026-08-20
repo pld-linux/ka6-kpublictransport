@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	26.04.3
+%define		kdeappsver	26.08.0
 %define		kframever	5.94.0
 %define		qtver		6.6.0
 %define		kaname		kpublictransport
 Summary:	A library for accessing realtime public transport data
 Name:		ka6-%{kaname}
-Version:	26.04.3
+Version:	26.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	fffb0e42afcee0f915afa030f43c3b47
+# Source0-md5:	7200c9df3707825c57482535977e8b3f
 URL:		https://community.kde.org/KDE_PIM/KDE_Itinerary
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -59,7 +59,8 @@ W tym:
 - Informacja o sieci połączeń.
 - Informacja o wagonach i rozmieszczeniu peronów.
 - Informacja o wpożyczaniu rowerów i skuterów.
-- Informacje w czasie rzeczywistym o statusie wind i ruchomych schodów.
+- Informacje w czasie rzeczywistym o statusie wind i ruchomych
+  schodów.
 
 %package devel
 Summary:	Header files for %{kaname} development
@@ -120,3 +121,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/cmake/KPublicTransport
 %{_libdir}/libKPublicTransport.so
 %{_libdir}/libKPublicTransportOnboard.so
+%{_libdir}/qt6/metatypes/qt6kpublictransport_metatypes.json
+%{_libdir}/qt6/metatypes/qt6kpublictransportonboard_metatypes.json
